@@ -50,8 +50,8 @@ def default_nicks():
             import sugar3.profile
             import hashlib
 
-            user_name = sugar.profile.get_nick_name()
-            pubkey = sugar.profile.get_pubkey()
+            user_name = sugar3.profile.get_nick_name()
+            pubkey = sugar3.profile.get_pubkey()
             m = hashlib.sha1()
             m.update(pubkey)
             hexhash = m.hexdigest()
@@ -80,7 +80,7 @@ def default_nicks():
 class Network(object):
     socket = None
 
-    def __init__(self, core, server="irc.default.org", port=8001, nicks=[],
+    def __init__(self, core, server="irc.freenode.net", port=8001, nicks=[],
                  username="", fullname="", name=None, **kwargs):
         self.core = core
         self.manager = core.manager
